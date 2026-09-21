@@ -38,7 +38,7 @@ console.log('⭐'.repeat(rating) + ' ' + placeName);
 function greetFavorite(placeName, rating) {
     console.log(placeName + ' has ' + rating + ' stars!');
 }
-greetFavorite('Starbucks', 5);   // "Starbucks has 5 stars!"
+greetFavorite('Zolis', 5);   // "Zolis has 5 stars!"
 
 
 const nameInput = document.getElementById('name');
