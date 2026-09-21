@@ -172,6 +172,14 @@ textarea {
    10. CARDS
    ========================== */
 
+.favorite-card {
+    padding: var(--space-lg);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
 .favorites-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -181,7 +189,6 @@ textarea {
 .empty-message {
     grid-column: 1 / -1;
 }
-
 
 /* ==========================
    11. FOOTER
@@ -197,4 +204,3 @@ textarea {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 }
-
