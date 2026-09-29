@@ -2,11 +2,11 @@
 
  Local Favorites Tracker
 
-Local Favorites Tracker is a simple web app I built for Project 2 in WRIT 40363 at TCU. It lets users save places they like, rate them, add notes, and organize them by category. My categories include Coffee, Restaurants, Study Spots, Parks, Shopping, and Other.
+Local Favorites Tracker is a simple web app I built for Project 2. It lets users save places they like, rate them, add notes, and organize them by category. My categories include Coffee, Restaurants, Study Spots, Parks, Shopping, and Other.
 
 Live site: https://briellehardman.github.io/local-favorites-tracker/ 
 
-What it does
+##What it does
 
 - Saves a place name, category, rating, and notes
 - Lets users search through saved places by name or notes
