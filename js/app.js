@@ -7,6 +7,27 @@ const favoritesList = document.getElementById('favorites-list');
 const searchInput = document.getElementById('search-input');
 const categoryFilter = document.getElementById('category-filter');
 
+function saveFavorites() {
+    try {
+        localStorage.setItem('localFavorites', JSON.stringify(favorites));
+    } catch (error) {
+        alert('Unable to save favorites. Storage may be disabled.');
+    }
+}
+
+function loadFavorites() {
+    try {
+        const saved = localStorage.getItem('localFavorites');
+        if (saved) {
+            favorites = JSON.parse(saved);
+        } else {
+            favorites = [];
+        }
+    } catch (error) {
+        favorites = [];
+    }
+}
+
 function addFavorite(event) {
     event.preventDefault();
 
@@ -27,6 +48,8 @@ function addFavorite(event) {
     };
 
     favorites.push(newFavorite);
+    saveFavorites();
+
     form.reset();
     displayFavorites();
 }
@@ -36,8 +59,9 @@ form.addEventListener('submit', addFavorite);
 function deleteFavorite(index) {
     const favorite = favorites[index];
     if (confirm(`Delete "${favorite.name}"?`)) {
-        favorites.splice(index, 1);   // remove 1 item at index
-        searchFavorites();            // re-render, keeping current filter
+        favorites.splice(index, 1);
+        saveFavorites();
+        searchFavorites();
     }
 }
 
@@ -68,6 +92,7 @@ function searchFavorites() {
     filtered.forEach(function(favorite) {
         const index = favorites.indexOf(favorite);
         const stars = '⭐'.repeat(favorite.rating);
+
         favoritesList.innerHTML += `
             <div class="favorite-card">
                 <h3>${favorite.name}</h3>
@@ -81,12 +106,13 @@ function searchFavorites() {
 }
 
 function displayFavorites() {
-    searchInput.value = '';          // clear the search box
-    categoryFilter.value = 'all';    // back to All categories
+    searchInput.value = '';
+    categoryFilter.value = 'all';
     searchFavorites();
 }
 
 searchInput.addEventListener('input', searchFavorites);
 categoryFilter.addEventListener('change', searchFavorites);
 
+loadFavorites();
 displayFavorites();
