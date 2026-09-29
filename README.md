@@ -1,25 +1,27 @@
 # Local Favorites Tracker
 
-Local Favorites Tracker is a simple web app I built for Project 2. It lets users save places they like, rate them, add notes, and organize them by category. My categories include Coffee, Restaurants, Study Spots, Parks, Shopping, and Other.
+I made Local Favorites Tracker for Project 2. It lets users save places they like and keep them organized. Users can add a name, category, rating, and notes. The categories are Coffee, Restaurants, Study Spots, Parks, Shopping, and Other.
 
-Live site: https://briellehardman.github.io/local-favorites-tracker/ 
+**Live site:** https://briellehardman.github.io/local-favorites-tracker/
 
 ## What it does
 
-- Saves a place name, category, rating, and notes
-- Lets users search through saved places by name or notes
-- Filters saved places by category
-- Removes favorites with a confirmation before deleting
-- Saves favorites in the browser so they stay after the page is refreshed
+- Adds favorite places
+- Saves a category, rating, and notes
+- Searches by place name or notes
+- Filters places by category
+- Deletes saved places
+- Keeps favorites saved after refreshing the page
 
- ## Built with
+## Built with
 
-- HTML for the page structure and form
-- CSS for layout, spacing, typography, cards, and buttons
-- JavaScript for adding, displaying, searching, filtering, and deleting favorites
-- `localStorage` and JSON for saving data in the browser
-- GitHub Pages for the live site
+- HTML
+- CSS
+- JavaScript
+- `localStorage`
+- JSON
+- GitHub Pages
 
 ## Notes
 
-The saved favorites are connected to the browser being used, so they will not automatically appear on another device or browser. If the browser storage is cleared, the saved favorites will also be removed. The app is also set up to return to an empty list if stored data cannot be read.
+Favorites are saved in the browser. They will not automatically show up on another device. If the browser data is cleared, the saved favorites will be deleted.
